@@ -25,7 +25,7 @@
   * (3) git checkout -t origin/msa-test
      * 이 명령을 통해 msa-test 브랜치로 이동됨
      * git clone의 경우 msa-test 브랜치로 이동해주어야 함 (Zip으로 받은 경우는 msa-test 브랜치로부터 받은 내용이므로 압축을 풀고 사용하면됨)
-     * 참고로 master 브랜치에는 unit test가 작성되지 않아 mvn install시 오류가 발생함 (e.g account 마이크로서비스)
+     * 참고로 master 브랜치에는 unit test가 작성되어있지 않아 mvn install시 오류가 발생함 (e.g account 마이크로서비스)
   * (4) mvn 빌드
     - mvn install
     - eureka unit test 오류시 disable (eurekaserver\src\test\java\...\EurekaserverApplicationTests.java에 @SpringBootTest아래에 @Disable를 추가하고 다시빌드
