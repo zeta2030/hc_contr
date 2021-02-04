@@ -31,6 +31,7 @@
     - eureka unit test 오류시 disable (eurekaserver\src\test\java\...\EurekaserverApplicationTests.java에 @SpringBootTest아래에 @Disable를 추가하고 다시빌드
     - mvn install 
        - 오류가 없었다면 수행하지 않아도 됨
+       - order에서 오류가 발생했다면, 당연한 것이므로 (5)를 진행하면 됨
   * (5) customer에서 contract 테스트 진행   
     - sample-spring-cloud\customer\src\test\java\com\sample\spring\cloud\customer\CustomerConsumerContractTest.java의 37행에 있는 @Disabled를 주석처리(// @Disabled)
     - cd customer 
