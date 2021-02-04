@@ -32,7 +32,7 @@
     - 테스트 등록확인: http://127.0.0.1:9292/
   * (3) provider 테스트 진행
     - account에서 AccountProviderContractTest에서 disabled를 주석처리 @Disabled 앞에 // 추가
-   - account 폴더로 이동
-   - mvn test
+    - account 폴더로 이동
+    - mvn test
 
 * 위에서 2.(3)에서 문제 없으면 contract 테스트가 성공한 것임
