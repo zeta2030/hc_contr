@@ -32,13 +32,16 @@
   * (5) customer에서 contract 테스트 진행   
     - D:\git_repo\hc2\sample-spring-cloud\customer\src\test\java\com\sample\spring\cloud\customer\CustomerConsumerContractTest.java의 37행에 있는 @Disabled를 주석처리(// @Disabled)
     - cd customer 
+       - sample-spring-cloud\customer 로 이동됩니다.
     - mvn test
-      -WIPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+       - sample-spring-cloud\customer\target\pacts\accountClientPact-customerServiceProvider.json 가 생성됨
+       - 컴퓨팅 리소스가 부족할 경우, '현재 연결은 사용자의 호스트 시스템의 소프트웨어의 의해 중단되었습니다.'라는 메세지가 나타날 수 있다.
+       - 이경우, 조금 있다가 다시 'mvn test'를 수행하거나, 본 contract test'에서는 사용되지 않는 컨테이너들(zipkin, rabbitmq, elk)등을 종료한 뒤 mvn test를 수행한다.
     - mvn pact:publish
     - 테스트 등록확인: http://127.0.0.1:9292/
-  * (3) provider 테스트 진행
-    - account에서 AccountProviderContractTest에서 disabled를 주석처리 @Disabled 앞에 // 추가
-    - account 폴더로 이동
+  * (6) provider 테스트 진행
+    - D:\git_repo\hc2\sample-spring-cloud\account\src\test\java\com\sample\spring\cloud\account\controller\AccountProviderContractTest에서 @Disabled를 주석처리 (//@Disabled)
+    - cd account 
     - mvn test
 
-* 위에서 2.(3)에서 문제 없으면 contract 테스트가 성공한 것임
+* 위에서 2.(6)에서 문제 없으면 contract 테스트가 성공한 것임
