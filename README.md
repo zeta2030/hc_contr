@@ -28,10 +28,10 @@
      * 참고로 master 브랜치에는 unit test가 작성되지 않아 mvn install시 오류가 발생함 (e.g account 마이크로서비스)
   * (4) mvn 빌드
     - mvn install
-    - eureka unit test 오류시 disable (eurekaserver/src/test/java/.../EurekaserverApplicationTests.java에 @SpringBootTest아래에 @Disable를 추가하고 다시빌드
+    - eureka unit test 오류시 disable (eurekaserver\src\test\java\...\EurekaserverApplicationTests.java에 @SpringBootTest아래에 @Disable를 추가하고 다시빌드
     - mvn install 
   * (5) customer에서 contract 테스트 진행   
-    - D:\git_repo\hc2\sample-spring-cloud\customer\src\test\java\com\sample\spring\cloud\customer\CustomerConsumerContractTest.java의 37행에 있는 @Disabled를 주석처리(// @Disabled)
+    - sample-spring-cloud\customer\src\test\java\com\sample\spring\cloud\customer\CustomerConsumerContractTest.java의 37행에 있는 @Disabled를 주석처리(// @Disabled)
     - cd customer 
        - sample-spring-cloud\customer 로 이동됩니다.
     - mvn test
@@ -41,8 +41,9 @@
     - mvn pact:publish
     - 테스트 등록확인: http://127.0.0.1:9292/
   * (6) provider 테스트 진행
-    - D:\git_repo\hc2\sample-spring-cloud\account\src\test\java\com\sample\spring\cloud\account\controller\AccountProviderContractTest에서 @Disabled를 주석처리 (//@Disabled)
-    - cd account 
+    - sample-spring-cloud\account\src\test\java\com\sample\spring\cloud\account\controller\AccountProviderContractTest에서 @Disabled를 주석처리 (//@Disabled)
+    - cd ..\account 
+       - sample-spring-cloud\account 로 이동됩니다.
     - mvn test
 
 * 위에서 2.(6)에서 문제 없으면 contract 테스트가 성공한 것임
