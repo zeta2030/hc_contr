@@ -19,15 +19,21 @@
        * docker-compose up -d 
    * (3) rabbit mq
    * (4) pack 설치
-2. https://github.com/Kouzie/sample-spring-cloud/tree/msa-test 의 소스 다운로드(clone)
-  * (1) msa-test 폴더 안으로 이동 (cd msa-test)
+2. https://github.com/Kouzie/sample-spring-cloud/tree/msa-test 의 소스 다운로드(zip 다운로드 or git clone)
+  * (1) git clone https://github.com/Kouzie/sample-spring-cloud.git
+  * (2) cd sample-spring-cloud
+  * (3) git checkout -t origin/msa-test
+     * git clone의 경우 msa-test 브랜치로 이동해주어야 함 (Zip으로 받은 경우는 msa-test 브랜치로부터 받은 내용임)
+     * 참고로 master 브랜치에는 test가 작성되지 않아 오류가 발생하는 케이스가 있음 (e.g account 마이크로서비스)
+  * (4) mvn 빌드
     - mvn install
-    - eureka unit test 오류시 disable (eurekaserver/src/test/java/.../EurekaserverApplicationTests.java에 @SpringBootTest아래에 @Disable를 추가
-   - mvn install
-  * (2) customer에서 contract 테스트 진행   
-    - constomerConsumerContractTest 를 테스트 하기 전에 disabled를 주석처리 @Disabled 앞에 // 추가
-    - customer 폴더로 이동
+    - eureka unit test 오류시 disable (eurekaserver/src/test/java/.../EurekaserverApplicationTests.java에 @SpringBootTest아래에 @Disable를 추가하고 다시빌드
+    - mvn install 
+  * (5) customer에서 contract 테스트 진행   
+    - D:\git_repo\hc2\sample-spring-cloud\customer\src\test\java\com\sample\spring\cloud\customer\CustomerConsumerContractTest.java의 37행에 있는 @Disabled를 주석처리(// @Disabled)
+    - cd customer 
     - mvn test
+      -WIPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
     - mvn pact:publish
     - 테스트 등록확인: http://127.0.0.1:9292/
   * (3) provider 테스트 진행
